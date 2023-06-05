@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Oyster Tracker Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="center-container">
+        <h1>Earls Robson Oyster Tracker</h1>
+        <button onclick="location.href='{% url 'upload' %}'">Go to Upload Page</button>
+        <button onclick="location.href='{% url 'tracker' %}'">Go to Tracker Page</button>
+        <button onclick="location.href='{% url 'recent' %}'">Recent Packages</button>
+    </div>
+</body>
+</html>

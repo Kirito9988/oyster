@@ -1,0 +1,15 @@
+<form method="get">
+    <label>
+        <input type="date" name="search_date">
+    </label>
+    <button type="submit">Search</button>
+</form>
+
+{% for package in packages %}
+    <div>
+        <p>Received date: {{ package.received_date|date:"Y-m-d" }}</p>
+        <p>Harvest date: {{ package.harvest_date|date:"Y-m-d" }}</p>
+        <p>Name: {{ package.full_name }}</p>
+        <img src="{{ package.note_image.url }}" alt="">
+    </div>
+{% endfor %}

@@ -1,0 +1,29 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Oyster Tracker Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+<h1>Search Oyster Document</h1>
+<form method="get">
+    <label>
+        <input type="date" name="search_date">
+    </label>
+    <button type="submit">Search</button>
+</form>
+
+{% for package in packages %}
+    <div class="package">
+        <p>Received date: {{ package.received_date|date:"Y-m-d" }}</p>
+        <p>Harvest date: {{ package.harvest_date|date:"Y-m-d" }}</p>
+        <p>Name: {{ package.full_name }}</p>
+        <img class="note-image" src="{{ package.note_image.url }}" alt="">
+    </div>
+{% endfor %}
+
+</body>
+</html>
